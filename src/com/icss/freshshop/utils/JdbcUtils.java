@@ -12,8 +12,8 @@ public class JdbcUtils {
     protected Connection conn;
     public void openConn() throws Exception {
         if(conn == null || conn.isClosed()){
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/freshshop";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://192.168.249.205:3306/freshshop";
             String userName = "root";
             String pwd = "123456";
             conn = DriverManager.getConnection(url,userName,pwd);
