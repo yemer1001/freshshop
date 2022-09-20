@@ -3,12 +3,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>天天生鲜-登录</title>
-	<link rel="stylesheet" type="text/css" href="../css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
 </head>
 <body>
 	<div class="login_top clearfix">
-		<a href="index.html" class="login_logo"><img src="../images/logo02.png"></a>	
+		<a href="index.jsp" class="login_logo"><img src="${pageContext.request.contextPath}/images/logo02.png"></a>
 	</div>
 
 	<div class="login_form_bg">
@@ -21,7 +21,7 @@
 					<a href="#">立即注册</a>
 				</div>
 				<div class="form_input">
-					<form action="/LoginServlet" method="post" >
+					<form action="${pageContext.request.contextPath}/LoginServlet" method="post" >
 						<input type="text" name="username" class="name_input" placeholder="请输入用户名">
 						<div class="user_error">输入错误</div>
 						<input type="password" name="pwd" class="pass_input" placeholder="请输入密码">
@@ -30,6 +30,7 @@
 							<input type="checkbox" name="">
 							<label>记住用户名</label>
 							<a href="#">忘记密码</a>
+							<span style="color: red"><%=request.getAttribute("msg")%></span>
 						</div>
 						<input type="submit" name="" value="登录" class="input_submit">
 					</form>
