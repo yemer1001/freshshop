@@ -30,7 +30,7 @@
 							<input type="checkbox" name="">
 							<label>记住用户名</label>
 							<a href="#">忘记密码</a>
-							<span style="color: red"><%=request.getAttribute("msg")%></span>
+							<span style="color: red">${requestScope.msg}</span>
 						</div>
 						<input type="submit" name="" value="登录" class="input_submit">
 					</form>

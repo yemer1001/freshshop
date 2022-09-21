@@ -12,4 +12,6 @@ import java.util.List;
  */
 public interface IGoodsService {
     List<GoodsEntity> findGoodsByCategoryId(int categoryId);
+
+    GoodsEntity findGoodsDetail(String goodsid);
 }

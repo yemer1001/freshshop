@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.List"%>
 <%@ page import="com.icss.freshshop.entity.GoodsEntity"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -102,15 +103,13 @@
 		<div class="goods_con clearfix">
 			<div class="goods_banner fl"><img src="${pageContext.request.contextPath}/images/banner01.jpg"></div>
 			<ul class="goods_list fl">
-				<% List<GoodsEntity> lists = (List<GoodsEntity>) request.getAttribute("goods1");
-					for (GoodsEntity list : lists) {
-				%>
-				<li>
-					<h4><a href="detail.html"><%=list.getGoodsname()%></a></h4>
-					<a href="#"><img src="${pageContext.request.contextPath}/images/goods/goods003.jpg"></a>
-					<div class="prize">¥ <%=list.getPrice()%></div>
+				<c:forEach var="g1" items="${requestScope.goods1}">
+				<li onclick="location.href='FindGoodsDetailServlet?goodsid=${g1.goodsid}'">
+					<h4><a href="javascript:;">${g1.goodsname}</a></h4>
+					<a href="javascript:;"><img src="${g1.imgpath}"></a>
+					<div class="prize">¥ ${g1.price}</div>
 				</li>
-				<%}%>
+				</c:forEach>
 			</ul>
 		</div>
 	</div>
@@ -129,26 +128,13 @@
 		<div class="goods_con clearfix">
 			<div class="goods_banner fl"><img src="${pageContext.request.contextPath}/images/banner02.jpg"></div>
 			<ul class="goods_list fl">
+				<c:forEach var="g2" items="${requestScope.goods2}">
 				<li>
-					<h4><a href="#">青岛野生海捕大青虾</a></h4>
-					<a href="#"><img src="${pageContext.request.contextPath}/images/goods/goods018.jpg"></a>
-					<div class="prize">¥ 48.00</div>
+					<h4><a href="#">${g2.goodsname}</a></h4>
+					<a href="#"><img src="${g2.imgpath}"></a>
+					<div class="prize">¥ ${g2.price}</div>
 				</li>
-				<li>
-					<h4><a href="#">扇贝</a></h4>
-					<a href="#"><img src="${pageContext.request.contextPath}/images/goods/goods019.jpg"></a>
-					<div class="prize">¥ 46.00</div>
-				</li>
-				<li>
-					<h4><a href="#">冷冻秋刀鱼</a></h4>
-					<a href="#"><img src="${pageContext.request.contextPath}/images/goods/goods020.jpg"></a>
-					<div class="prize">¥ 19.00</div>
-				</li>
-				<li>
-					<h4><a href="#">基围虾</a></h4>
-					<a href="#"><img src="${pageContext.request.contextPath}/images/goods/goods021.jpg"></a>
-					<div class="prize">¥ 25.00</div>
-				</li>
+				</c:forEach>
 			</ul>
 		</div>
 	</div>

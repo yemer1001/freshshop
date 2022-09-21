@@ -12,4 +12,6 @@ import java.util.List;
  */
 public interface IGoodsDao {
     List<GoodsEntity> findGoodsByCategoryId(int categoryId);
+
+    GoodsEntity findGoodsDetail(String goodsid);
 }

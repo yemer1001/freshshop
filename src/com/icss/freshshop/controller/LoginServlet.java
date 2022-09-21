@@ -29,12 +29,12 @@ public class LoginServlet extends HttpServlet {
         String pwd = request.getParameter("pwd");
         //调用model,处理数据
         //创建service对象
-        IUserService service = (IUserService) new UserServiceImpl();
+        IUserService service = new UserServiceImpl();
         //调用service中登录的方法，类型entity
         UserEntity user = service.login(userName,pwd);
         //判断是否登录成功
         if (user != null){
-            response.sendRedirect("user/index.jsp");
+            response.sendRedirect("welcome.jsp");
         }else {
             request.setAttribute("msg","用户名或密码错误");
             request.getRequestDispatcher("user/login.jsp").forward(request,response);

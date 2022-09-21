@@ -20,4 +20,9 @@ public class GoodsServiceImpl implements IGoodsService {
 
         return dao.findGoodsByCategoryId(categoryId);
     }
+
+    @Override
+    public GoodsEntity findGoodsDetail(String goodsid) {
+        return dao.findGoodsDetail(goodsid);
+    }
 }

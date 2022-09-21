@@ -42,4 +42,34 @@ public class GoodsDaoImpl extends JdbcUtils implements IGoodsDao{
         }
         return null;
     }
+
+    @Override
+    public GoodsEntity findGoodsDetail(String goodsid) {
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        try {
+            openConn();
+            String sql = "select * from t_goods where goodsid = ?";
+            pst = conn.prepareStatement(sql);
+            pst.setInt(1,Integer.parseInt(goodsid));
+            rs = pst.executeQuery();
+            GoodsEntity goods = null;
+            while (rs.next()){
+                goods = new GoodsEntity();
+                goods.setGoodsid(rs.getInt("goodsid"));
+                goods.setGoodsname(rs.getString("goodsname"));
+                goods.setPrice(rs.getDouble("price"));
+                goods.setImgpath(rs.getString("imgpath"));
+                goods.setCategoryid(rs.getInt("categoryid"));
+                goods.setUnit(rs.getString("unit"));
+                goods.setGoodsinfo(rs.getString("goodsinfo"));
+            }
+            return goods;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeConnect(pst,rs);
+        }
+        return null;
+    }
 }
