@@ -34,6 +34,16 @@ public class LoginServlet extends HttpServlet {
         UserEntity user = service.login(userName,pwd);
         //判断是否登录成功
         if (user != null){
+           /* Cookie userNamecookie = new Cookie("username",user.getUsername());
+            Cookie passwordcookie = new Cookie("password",user.getPassword());
+            userNamecookie.setMaxAge(7*24*60*60);
+            passwordcookie.setMaxAge(7*24*60*60);
+            response.addCookie(userNamecookie);
+            response.addCookie(passwordcookie);*/
+
+            HttpSession session = request.getSession();
+            session.setAttribute("USER",user);
+
             response.sendRedirect("welcome.jsp");
         }else {
             request.setAttribute("msg","用户名或密码错误");

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -7,6 +8,22 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
 </head>
 <body>
+	<%--<%
+	String userName = "";
+	String password = "";
+	Cookie[]cookies = request.getCookies();
+		for (Cookie cookie : cookies) {
+			if (cookie.getName().equals("username")){
+				userName = cookie.getValue();
+			}
+			if (cookie.getName().equals("password")){
+				password = cookie.getValue();
+			}
+		}
+		if (!"".equals(userName)&&!"".equals(password)){
+			response.sendRedirect("../LoginServlet?username="+userName+"&pwd="+password);
+		}
+	%>--%>
 	<div class="login_top clearfix">
 		<a href="index.jsp" class="login_logo"><img src="${pageContext.request.contextPath}/images/logo02.png"></a>
 	</div>

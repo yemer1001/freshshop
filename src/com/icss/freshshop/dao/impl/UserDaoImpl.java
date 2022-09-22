@@ -35,6 +35,7 @@ public class UserDaoImpl extends JdbcUtils implements IUserDao {
                 user.setPhone(rs.getString("phone"));
                 user.setRole(rs.getInt("role"));
                 user.setStatus(rs.getInt("status"));
+                user.setPassword(rs.getString("password"));
             }
             return user;
         } catch (Exception e) {
