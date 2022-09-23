@@ -5,6 +5,8 @@ import com.icss.freshshop.dao.impl.UserDaoImpl;
 import com.icss.freshshop.entity.UserEntity;
 import com.icss.freshshop.service.IUserService;
 
+import java.util.Map;
+
 /**
  * @author : 齐双宝
  * @version : 1.0
@@ -18,5 +20,15 @@ public class UserServiceImpl implements IUserService {
     public UserEntity login(String userName, String pwd) {
         UserEntity user = dao.login(userName,pwd);
         return user;
+    }
+
+    @Override
+    public boolean register(Map<String, String[]> maps) {
+        return dao.register(maps);
+    }
+
+    @Override
+    public boolean checkUserName(String userName) {
+        return dao.checkUserName(userName);
     }
 }

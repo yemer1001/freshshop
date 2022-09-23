@@ -113,7 +113,7 @@ select {
 
 .login_banner {
 	height: 400px;
-	background: url(../images/banner.jpg) no-repeat center center;
+	background: url(${pageContext.request.contextPath}/images/banner.jpg) no-repeat center center;
 	background-color: #2A81B7;
 }
 
@@ -260,7 +260,7 @@ select {
 	line-height: 55px;
 	width: 100%;
 	border-bottom: 1px solid #ddd;
-	background: url(../images/icon_01.png) no-repeat 25px 20px;
+	background: url(${pageContext.request.contextPath}/images/icon_01.png) no-repeat 25px 20px;
 	cursor: pointer;
 }
 
@@ -269,11 +269,11 @@ select {
 }
 
 .nav_side .ColumnManagement {
-	background: url(../images/icon_02.png) no-repeat 25px 19px;
+	background: url(${pageContext.request.contextPath}/images/icon_02.png) no-repeat 25px 19px;
 }
 
 .nav_side .NewsManagement {
-	background: url(../images/icon_03.png) no-repeat 25px 20px;
+	background: url(${pageContext.request.contextPath}/images/icon_03.png) no-repeat 25px 20px;
 }
 
 .nav_side .active {

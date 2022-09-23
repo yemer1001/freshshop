@@ -4,9 +4,9 @@
 	<head>
 		<title></title>
 		<meta charset="utf-8">
-		<link href="../css/admin_main.css" rel="stylesheet">
-		<script type="text/javascript" src="../js/jquery.js"></script>
-		<script type="text/javascript" src="../js/main.js"></script>
+		<link href="${pageContext.request.contextPath}/css/admin_main.css" rel="stylesheet">
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/main.js"></script>
 		<style>
 			.b10 {
 				width: 10%;
@@ -25,7 +25,7 @@
                     <div class="amcl fr">
                        <form id="searchform" action="" method="post">
                         <input type="text" placeholder="商品名" class="fl" name="goodsname"  value="">
-                        <div class="search fl" onclick="seach()" ><img src="../images/search.png"></div>
+                        <div class="search fl" onclick="seach()" ><img src="${pageContext.request.contextPath}/images/search.png"></div>
                        </form>
                     </div> 
                 </h3>

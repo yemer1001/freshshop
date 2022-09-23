@@ -83,6 +83,15 @@ public class JdbcUtils {
             }
         }
     }
+    protected void closeConnect(PreparedStatement pst) {
+        if (pst != null){
+            try {
+                pst.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     public void beginTransaction() throws Exception {
         openConn();
         conn.setAutoCommit(false);

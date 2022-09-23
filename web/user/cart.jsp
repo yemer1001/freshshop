@@ -1,10 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>天天生鲜-购物车</title>
-	<link rel="stylesheet" type="text/css" href="../css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.js"></script>
 </head>
 <body>
 	<div class="header_con">
@@ -17,13 +18,13 @@
 				<div class="login_btn fl">
 					<a href="login.jsp">登录</a>
 					<span>|</span>
-					<a href="register.html">注册</a>
+					<a href="register.jsp">注册</a>
 				</div>
 				<div class="user_link fl">
 					<span>|</span>
 					<a href="user_center_info.html">用户中心</a>
 					<span>|</span>
-					<a href="cart.html">我的购物车</a>
+					<a href="cart.jsp">我的购物车</a>
 					<span>|</span>
 					<a href="user_center_order.html">我的订单</a>
 				</div>
@@ -31,8 +32,14 @@
 		</div>		
 	</div>
 
+	<script>
+		$(function (){
+
+		})
+	</script>
+
 	<div class="search_bar clearfix">
-		<a href="index.jsp" class="logo fl"><img src="../images/logo.png"></a>
+		<a href="index.jsp" class="logo fl"><img src="${pageContext.request.contextPath}/images/logo.png"></a>
 		<div class="sub_page_name fl">|&nbsp;&nbsp;&nbsp;&nbsp;购物车</div>
 		<div class="search_con fr">
 			<input type="text" class="input_text fl" name="" placeholder="搜索商品">
@@ -51,7 +58,7 @@
 	</ul>
 	<ul class="cart_list_td clearfix">
 		<li class="col01"><input type="checkbox" name="" checked></li>
-		<li class="col02"><img src="../images/goods/goods012.jpg"></li>
+		<li class="col02"><img src="${pageContext.request.contextPath}/images/goods/goods012.jpg"></li>
 		<li class="col03">奇异果<br><em>25.80元/500g</em></li>
 		<li class="col04">500g</li>
 		<li class="col05">25.80元</li>
@@ -68,7 +75,7 @@
 
 	<ul class="cart_list_td clearfix">
 		<li class="col01"><input type="checkbox" name="" checked></li>
-		<li class="col02"><img src="../images/goods/goods003.jpg"></li>
+		<li class="col02"><img src="${pageContext.request.contextPath}/images/goods/goods003.jpg"></li>
 		<li class="col03">大兴大棚草莓<br><em>16.80元/500g</em></li>
 		<li class="col04">500g</li>
 		<li class="col05">16.80元</li>

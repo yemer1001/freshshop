@@ -2,6 +2,8 @@ package com.icss.freshshop.dao;
 
 import com.icss.freshshop.entity.UserEntity;
 
+import java.util.Map;
+
 /**
  * @author : 齐双宝
  * @version : 1.0
@@ -10,4 +12,8 @@ import com.icss.freshshop.entity.UserEntity;
  */
 public interface IUserDao {
     UserEntity login(String userName, String pwd);
+
+    boolean register(Map<String, String[]> maps);
+
+    boolean checkUserName(String userName);
 }

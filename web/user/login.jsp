@@ -21,7 +21,7 @@
 			}
 		}
 		if (!"".equals(userName)&&!"".equals(password)){
-			response.sendRedirect("../LoginServlet?username="+userName+"&pwd="+password);
+			response.sendRedirect("${pageContext.request.contextPath}/LoginServlet?username="+userName+"&pwd="+password);
 		}
 	%>--%>
 	<div class="login_top clearfix">

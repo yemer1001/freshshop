@@ -20,7 +20,7 @@
 			<input type="button" class="input_btn fr" name="" value="搜索">
 		</div>
 		<div class="guest_cart fr">
-			<a href="cart.html" class="cart_name fl">我的购物车</a>
+			<a href="cart.jsp" class="cart_name fl">我的购物车</a>
 			<div class="goods_count fl" id="show_count">1</div>
 		</div>
 	</div>
@@ -78,11 +78,44 @@
 			<div class="total">总价：<em>${goods.price}元</em></div>
 			<div class="operate_btn">
 				<a href="javascript:;" class="buy_btn">立即购买</a>
-				<a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>				
+				<a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>
+				<input type="hidden" name="userid" value="${USER.userid}">
+				<input type="hidden" name="goodsid" value="${goods.goodsid}">
 			</div>
 		</div>
 	</div>
 
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.js"></script>
+	<script>
+		$(function (){
+			$("#add_cart").click(function (){
+				let userid = $("input[type='hidden']:eq(0)").val();
+				let goodsid = $("input[type='hidden']:eq(1)").val();
+				if (userid!=null&&userid!=""&&userid!=0){
+					$.ajax({
+						type:"post",
+						url:"AddCartServlet",
+						data:{"goodsid":goodsid},
+						dataType:"json",
+						success:function (msg){
+							if (msg.result){
+								alert("购物车添加成功");
+							}else {
+								alert("购物车添加失败");
+							}
+						},
+						error:function (){
+							alert("网络访问失败");
+						}
+					})
+				}else {
+					alert("请先登录");
+					window.location.href="user/login.jsp";
+				}
+
+			})
+		})
+	</script>
 	<div class="main_wrap clearfix">
 		<div class="l_wrap fl clearfix">
 			<div class="new_goods">

@@ -34,7 +34,7 @@
 
 	function parseCookieValue(s) {
 		if (s.indexOf('"') === 0) {
-			// This is a quoted cookie as according to RFC2068, unescape...
+			// This is a quoted cookie as according to RFC2068, unescape${pageContext.request.contextPath}.
 			s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
 		}
 
@@ -88,7 +88,7 @@
 			var cookie = parts.join('=');
 
 			if (key && key === name) {
-				// If second argument (value) is a function it's a converter...
+				// If second argument (value) is a function it's a converter${pageContext.request.contextPath}.
 				result = read(cookie, value);
 				break;
 			}
@@ -109,7 +109,7 @@
 			return false;
 		}
 
-		// Must not alter options, thus extending a fresh object...
+		// Must not alter options, thus extending a fresh object${pageContext.request.contextPath}.
 		$.cookie(key, '', $.extend({}, options, { expires: -1 }));
 		return !$.cookie(key);
 	};

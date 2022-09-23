@@ -26,13 +26,13 @@
             </c:if>
 
             <span>|</span>
-            <a href="${pageContext.request.contextPath}/user/register.html">注册</a>
+            <a href="${pageContext.request.contextPath}/user/register.jsp">注册</a>
         </div>
         <div class="user_link fl">
             <span>|</span>
             <a href="user_center_info.html">用户中心</a>
             <span>|</span>
-            <a href="cart.html">我的购物车</a>
+            <a href="cart.jsp">我的购物车</a>
             <span>|</span>
             <a href="user_center_order.html">我的订单</a>
             <span>|</span>
