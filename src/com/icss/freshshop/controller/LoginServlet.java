@@ -44,6 +44,14 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("USER",user);
 
+            ServletContext application = this.getServletContext();
+            Integer count = (Integer)application.getAttribute("count");
+            if (count==null){
+                application.setAttribute("count",1);
+            }else {
+                application.setAttribute("count",count+1);
+            }
+
             response.sendRedirect("welcome.jsp");
         }else {
             request.setAttribute("msg","用户名或密码错误");

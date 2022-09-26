@@ -77,7 +77,7 @@
 				<a href="#">加州提子</a>
 				<a href="#">亚马逊牛油果</a>
 			</div>
-			<a href="list.html" class="goods_more fr" id="fruit_more">查看更多 ></a>
+			<a href="${pageContext.request.contextPath}/user/list.jsp?categoryid=1" class="goods_more fr" id="fruit_more">查看更多 ></a>
 		</div>
 
 		<div class="goods_con clearfix">
@@ -302,7 +302,7 @@
 		}
 
 		oFruit.onclick = function(){
-			window.location.href = 'list.html';
+			window.location.href = 'list.jsp';
 		}
 	</script>
 </body>

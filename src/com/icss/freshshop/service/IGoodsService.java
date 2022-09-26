@@ -14,4 +14,6 @@ public interface IGoodsService {
     List<GoodsEntity> findGoodsByCategoryId(int categoryId);
 
     GoodsEntity findGoodsDetail(String goodsid);
+
+   List<GoodsEntity>  findMoreGoods(String categoryid);
 }

@@ -18,6 +18,8 @@
             欢迎您：<em>张 山</em>
         </div>--%>
         <div class="login_btn fl">
+            <a href="javascript:;">登录人次 &nbsp; ${applicationScope.count}</a>
+            <span>|</span>
             <c:if test="${sessionScope.USER == null}">
                 <a href="${pageContext.request.contextPath}/user/login.jsp">登录</a>
             </c:if>
