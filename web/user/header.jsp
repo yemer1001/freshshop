@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2022/9/22/022
-  Time: 14:36
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -32,12 +25,18 @@
         </div>
         <div class="user_link fl">
             <span>|</span>
-            <a href="user_center_info.html">用户中心</a>
+            <a href="${pageContext.request.contextPath}/FindIndexInfoServlet">首页</a>
             <span>|</span>
-            <a href="cart.jsp">我的购物车</a>
+            <a href="${pageContext.request.contextPath}/user/user_center_info.html">用户中心</a>
             <span>|</span>
-            <a href="user_center_order.html">我的订单</a>
+            <a href="${pageContext.request.contextPath}/cart/findMyCart.do">我的购物车</a>
             <span>|</span>
+            <a href="${pageContext.request.contextPath}/order/findMyOrder.do">我的订单</a>
+            <span>|</span>
+            <c:if test="${sessionScope.USER != null}">
+                <a href="${pageContext.request.contextPath}/user/face_register.jsp">人脸注册</a>
+                <span>|</span>
+            </c:if>
             <a href="LogoutServlet">退出登录</a>
         </div>
     </div>

@@ -110,4 +110,7 @@ public class JdbcUtils {
             e.printStackTrace();
         }
     }
+
+    public void closeConnection() {
+    }
 }

@@ -24,6 +24,9 @@
 			response.sendRedirect("${pageContext.request.contextPath}/LoginServlet?username="+userName+"&pwd="+password);
 		}
 	%>--%>
+	<%
+	session.setAttribute("token",System.currentTimeMillis()+"");
+	%>
 	<div class="login_top clearfix">
 		<a href="index.jsp" class="login_logo"><img src="${pageContext.request.contextPath}/images/logo02.png"></a>
 	</div>
@@ -36,6 +39,8 @@
 				<div class="login_title clearfix">
 					<h1>用户登录</h1>
 					<a href="#">立即注册</a>
+					<a href="${pageContext.request.contextPath}/user/face_login.jsp">人脸登录</a>
+
 				</div>
 				<div class="form_input">
 					<form action="${pageContext.request.contextPath}/LoginServlet" method="post" >
@@ -49,6 +54,7 @@
 							<a href="#">忘记密码</a>
 							<span style="color: red">${requestScope.msg}</span>
 						</div>
+						<input type="hidden" name="token" value="${sessionScope.token}">
 						<input type="submit" name="" value="登录" class="input_submit">
 					</form>
 				</div>

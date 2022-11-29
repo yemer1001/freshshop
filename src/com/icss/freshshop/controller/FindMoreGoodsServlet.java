@@ -28,6 +28,7 @@ public class FindMoreGoodsServlet extends HttpServlet {
         String categoryid = request.getParameter("categoryid");
         request.setCharacterEncoding("utf-8");
         response.setContentType("html/text;charset=utf-8");
+        response.setHeader("Access-Control-Allow-Origin","*");
         IGoodsService service = new GoodsServiceImpl();
         List<GoodsEntity> lists = service.findMoreGoods(categoryid);
         JSONObject obj = new JSONObject();

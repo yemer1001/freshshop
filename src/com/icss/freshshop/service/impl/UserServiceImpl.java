@@ -31,4 +31,14 @@ public class UserServiceImpl implements IUserService {
     public boolean checkUserName(String userName) {
         return dao.checkUserName(userName);
     }
+
+    @Override
+    public void updateIsFace(int userid, String y) {
+        dao.updateIsFace(userid,y);
+    }
+
+    @Override
+    public UserEntity findUserById(int userid) {
+        return dao.findUserById(userid);
+    }
 }

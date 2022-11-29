@@ -13,4 +13,5 @@
 <body>
     <%request.getRequestDispatcher("FindIndexInfoServlet").forward(request,response);%>
 </body>
+
 </html>

@@ -58,7 +58,7 @@
 	</div>
 
 	<div class="goods_detail_con clearfix">
-		<div class="goods_detail_pic fl"><img src="${pageContext.request.contextPath}/images/goods_detail.jpg"></div>
+		<div class="goods_detail_pic fl"><img src="${goods.imgpath}"></div>
 
 		<div class="goods_detail_list fr">
 			<h3>${goods.goodsname}</h3>

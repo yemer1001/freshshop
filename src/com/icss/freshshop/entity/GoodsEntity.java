@@ -29,6 +29,16 @@ public class GoodsEntity implements Serializable {
     public GoodsEntity() {
     }
 
+    public GoodsEntity(int goodsid, String goodsname, double price, String unit, String goodsinfo, int stock, String imgpath) {
+        this.goodsid = goodsid;
+        this.goodsname = goodsname;
+        this.price = price;
+        this.unit = unit;
+        this.goodsinfo = goodsinfo;
+        this.stock = stock;
+        this.imgpath = imgpath;
+    }
+
     public GoodsEntity(int goodsid, int categoryid, String goodsname, double price,
                        int isdiscount, String unit, String goodsinfo, int popular,
                        int salesvolume, int stock, Timestamp createtime, Timestamp addtime,

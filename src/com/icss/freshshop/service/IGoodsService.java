@@ -1,6 +1,9 @@
 package com.icss.freshshop.service;
 
+import com.icss.freshshop.entity.CategoryEntity;
 import com.icss.freshshop.entity.GoodsEntity;
+import com.icss.freshshop.vo.GoodsVo;
+import com.icss.freshshop.vo.PageResultVo;
 
 import java.util.List;
 
@@ -16,4 +19,10 @@ public interface IGoodsService {
     GoodsEntity findGoodsDetail(String goodsid);
 
    List<GoodsEntity>  findMoreGoods(String categoryid);
+
+    List<CategoryEntity> findAllCategory();
+
+    boolean addGoods(GoodsEntity goods);
+
+    void findAllGoodsPage(PageResultVo<GoodsVo> page);
 }

@@ -85,4 +85,50 @@ public class UserDaoImpl extends JdbcUtils implements IUserDao {
         }
         return false;
     }
+
+    @Override
+    public void updateIsFace(int userid, String y) {
+        PreparedStatement pst = null;
+        try {
+            openConn();
+            String sql = "update t_user set isface='y' where userid = ?";
+            pst = conn.prepareStatement(sql);
+            pst.setInt(1,userid);
+            pst.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            closeConn(conn,pst);
+        }
+
+    }
+
+    @Override
+    public UserEntity findUserById(int userid) {
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        try {
+            openConn();
+            String sql = "select * from t_user where userid =?";
+            pst = conn.prepareStatement(sql);
+            pst.setInt(1,userid);
+            rs = pst.executeQuery();
+            UserEntity user = null;
+            while (rs.next()){
+                user = new UserEntity();
+                user.setUserid(rs.getInt("userid"));
+                user.setUsername(rs.getString("username"));
+                user.setPhone(rs.getString("phone"));
+                user.setRole(rs.getInt("role"));
+                user.setStatus(rs.getInt("status"));
+                user.setPassword(rs.getString("password"));
+            }
+            return user;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            closeConn(conn,pst,rs);
+        }
+        return null;
+    }
 }

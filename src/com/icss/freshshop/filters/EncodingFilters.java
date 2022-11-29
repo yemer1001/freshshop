@@ -9,6 +9,7 @@ import java.io.IOException;
  * @create : 2022/9/26/026 17:00
  * @Description :
  */
+/*
 @WebFilter(filterName = "EncodingFilters",urlPatterns = {"/*"},
         initParams = {@WebInitParam(name = "version",value = "2.0")})
 public class EncodingFilters implements Filter {
@@ -25,3 +26,4 @@ public class EncodingFilters implements Filter {
     public void destroy(){
     }
 }
+*/

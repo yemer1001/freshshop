@@ -15,7 +15,7 @@
         $(".AccountManagement_c_iframe iframe").attr("src","categorylist.html")
     })
     $(".goodsManagement").click(function(){
-        $(".AccountManagement_c_iframe iframe").attr("src","goodslist.html")
+        $(".AccountManagement_c_iframe iframe").attr("src","../goods/findAllGoods.do?currentPage=1")
     })
     $(".OrdersManagement").click(function(){
         $(".AccountManagement_c_iframe iframe").attr("src","orderlist.html")

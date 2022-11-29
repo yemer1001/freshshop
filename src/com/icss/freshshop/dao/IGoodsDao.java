@@ -1,6 +1,8 @@
 package com.icss.freshshop.dao;
 
+import com.icss.freshshop.entity.CategoryEntity;
 import com.icss.freshshop.entity.GoodsEntity;
+import com.icss.freshshop.vo.GoodsVo;
 
 import java.util.List;
 
@@ -16,4 +18,12 @@ public interface IGoodsDao {
     GoodsEntity findGoodsDetail(String goodsid);
 
     List<GoodsEntity> findMoreGoods(String categoryid);
+
+    List<CategoryEntity> findAllCategory();
+
+    boolean addGoods(GoodsEntity goods);
+
+    List<GoodsVo> findAllGoodsPage(int firstSize, int pageSize);
+
+    int findTotalCount();
 }

@@ -16,4 +16,8 @@ public interface IUserService {
     boolean register(Map<String, String[]> maps);
 
     boolean checkUserName(String userName);
+
+    void updateIsFace(int userid, String y);
+
+    UserEntity findUserById(int userid);
 }

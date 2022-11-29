@@ -27,6 +27,15 @@ public class LoginServlet extends HttpServlet {
         //接受页面数据
         String userName = request.getParameter("username");
         String pwd = request.getParameter("pwd");
+
+        String requestToken = request.getParameter("token");
+        String sessionToken = (String)request.getSession().getAttribute("token");
+        if (requestToken==null || sessionToken==null || requestToken==sessionToken){
+            request.setAttribute("msg","表单重复提交");
+            request.getRequestDispatcher("user/login.jsp").forward(request,response);
+        }else {
+            request.getSession().removeAttribute("token");
+        }
         //调用model,处理数据
         //创建service对象
         IUserService service = new UserServiceImpl();
@@ -51,8 +60,11 @@ public class LoginServlet extends HttpServlet {
             }else {
                 application.setAttribute("count",count+1);
             }
-
-            response.sendRedirect("welcome.jsp");
+            if (user.getRole()==1){
+                response.sendRedirect("welcome.jsp");
+            }else {
+                response.sendRedirect("admin/index.jsp");
+            }
         }else {
             request.setAttribute("msg","用户名或密码错误");
             request.getRequestDispatcher("user/login.jsp").forward(request,response);
